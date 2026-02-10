@@ -18,3 +18,12 @@ def count_requests(logs):
         else:
             requests[s_ip] = 1
     return requests
+
+
+def port_protocol(logs):
+    port_and_protocol = dict()
+    for log in logs:
+        port = log[3]
+        protocol = log[4]
+        port_and_protocol[port] = protocol
+    return port_and_protocol
