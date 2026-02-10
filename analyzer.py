@@ -52,3 +52,11 @@ def find_suspicions(logs):
         if lst_suspicions:
             s_dict[s_ip] = lst_suspicions
     return s_dict
+
+def filtering_suspicions(logs):
+    sus_dict = find_suspicions(logs)
+    filtered_suspicions = dict()
+    for key, value in sus_dict.items():
+        if len(value) >= 2:
+            filtered_suspicions.update({key: value})
+    return filtered_suspicions
